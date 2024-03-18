@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ixw0ay5hpqe"]
+
+[ext_resource type="Script" path="res://QuitButton.gd" id="1_8jbmv"]
+[ext_resource type="Script" path="res://PlayButton.gd" id="1_rocm5"]
+
+[node name="MainMenu" type="Node2D"]
+scale = Vector2(0.998576, 1.00367)
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 511.0
+offset_top = 229.0
+offset_right = 593.0
+offset_bottom = 291.0
+scale = Vector2(1.1633, 1.01965)
+text = "Play"
+script = ExtResource("1_rocm5")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 512.73
+offset_top = 318.831
+offset_right = 604.73
+offset_bottom = 385.831
+text = "Quit"
+script = ExtResource("1_8jbmv")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
