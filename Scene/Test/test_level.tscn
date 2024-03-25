@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://d8g8xfsl782q"]
+
+[ext_resource type="PackedScene" uid="uid://cqb1mjce8u8dj" path="res://Global/Player/Player.tscn" id="1_tqwqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umfup"]
+size = Vector2(376.25, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2na16"]
+size = Vector2(16.8267, 247.976)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4f7oj"]
+size = Vector2(46, 270.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waaoj"]
+size = Vector2(73, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhi8w"]
+size = Vector2(2402, 42)
+
+[node name="TestLevel" type="Node2D"]
+position = Vector2(330, 145)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(188, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_umfup")
+
+[node name="Texture" type="Panel" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -188.0
+offset_top = -16.0
+offset_right = 188.0
+offset_bottom = 16.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.4509, -211.512)
+rotation = -0.848757
+shape = SubResource("RectangleShape2D_2na16")
+
+[node name="Texture7" type="Panel" parent="StaticBody2D/CollisionShape2D2"]
+offset_left = -9.07806
+offset_top = -124.525
+offset_right = 8.92194
+offset_bottom = 126.475
+rotation = -0.00327229
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-166, -183)
+shape = SubResource("RectangleShape2D_4f7oj")
+
+[node name="Texture2" type="Panel" parent="StaticBody2D/CollisionShape2D3"]
+offset_left = -23.0
+offset_top = -134.75
+offset_right = 24.0
+offset_bottom = 136.25
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(269, -16)
+shape = SubResource("RectangleShape2D_waaoj")
+
+[node name="Texture6" type="Panel" parent="StaticBody2D"]
+offset_left = 232.0
+offset_top = -26.0
+offset_right = 307.0
+offset_bottom = -7.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(355, -47)
+shape = SubResource("RectangleShape2D_waaoj")
+
+[node name="Texture5" type="Panel" parent="StaticBody2D/CollisionShape2D5"]
+offset_left = -37.0
+offset_top = -9.0
+offset_right = 38.0
+offset_bottom = 10.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(281, -108)
+shape = SubResource("RectangleShape2D_waaoj")
+
+[node name="Texture4" type="Panel" parent="StaticBody2D/CollisionShape2D6"]
+offset_left = -37.0
+offset_top = -9.0
+offset_right = 37.0
+offset_bottom = 9.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(178, -122)
+shape = SubResource("RectangleShape2D_waaoj")
+
+[node name="Texture3" type="Panel" parent="StaticBody2D/CollisionShape2D7"]
+offset_left = -36.0
+offset_top = -9.0
+offset_right = 38.0
+offset_bottom = 8.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+position = Vector2(-1, 215)
+scale = Vector2(200, 200)
+monitorable = false
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(-0.0500002, 0.0599999)
+scale = Vector2(0.005, 0.005)
+shape = SubResource("RectangleShape2D_lhi8w")
+
+[node name="Player" parent="." instance=ExtResource("1_tqwqs")]
+position = Vector2(188, 248)
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="Player" method="_on_area_2d_body_entered"]
