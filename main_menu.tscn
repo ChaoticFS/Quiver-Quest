@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7ixw0ay5hpqe"]
+[gd_scene load_steps=4 format=3 uid="uid://b7ixw0ay5hpqe"]
 
 [ext_resource type="Script" path="res://QuitButton.gd" id="1_8jbmv"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_hjrue"]
 [ext_resource type="Script" path="res://PlayButton.gd" id="1_rocm5"]
 
 [node name="MainMenu" type="Node2D"]
 scale = Vector2(0.998576, 1.00367)
+script = ExtResource("1_hjrue")
 
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 511.0
@@ -25,3 +27,6 @@ script = ExtResource("1_8jbmv")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

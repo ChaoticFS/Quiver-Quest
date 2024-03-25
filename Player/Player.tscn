@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqb1mjce8u8dj"]
+[gd_scene load_steps=4 format=3 uid="uid://cqb1mjce8u8dj"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_waxdx"]
+[ext_resource type="Texture2D" uid="uid://bveoss6vjdsu6" path="res://Assets/zamn.png" id="2_w8dji"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_logoa"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_waxdx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_logoa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.78814e-06, -1)
+scale = Vector2(0.1875, 0.265625)
+texture = ExtResource("2_w8dji")
