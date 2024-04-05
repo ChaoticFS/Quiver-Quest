@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bst44t067b8pu"]
 
-[ext_resource type="Script" path="res://Arrow.gd" id="1_4xcl5"]
+[ext_resource type="Script" path="res://Global/Player/Arrow/Arrow.gd" id="1_menpq"]
 [ext_resource type="Texture2D" uid="uid://cbun8gst7bvss" path="res://Assets/torch.png" id="2_kpow1"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_12h2l"]
 points = PackedVector2Array(-2, -2, 14, 0, -2, 2)
 
 [node name="Arrow" type="CharacterBody2D"]
-script = ExtResource("1_4xcl5")
+script = ExtResource("1_menpq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Arrow"]]
 position = Vector2(-3, 0)
