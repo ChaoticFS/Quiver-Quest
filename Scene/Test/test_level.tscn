@@ -112,7 +112,7 @@ position = Vector2(-0.0500002, 0.0599999)
 scale = Vector2(0.005, 0.005)
 shape = SubResource("RectangleShape2D_lhi8w")
 
-[node name="Player" parent="." instance=ExtResource("1_tqwqs")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_tqwqs")]
 position = Vector2(188, 248)
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="Player" method="_on_area_2d_body_entered"]

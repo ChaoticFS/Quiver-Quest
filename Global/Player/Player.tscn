@@ -8,7 +8,7 @@
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_waxdx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 shape = SubResource("CapsuleShape2D_logoa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -45,11 +45,14 @@ func _physics_process(delta):
 		get_tree().change_scene_to_file("res://Scene/Main Menu/main_menu.tscn")
 
 func _on_area_2d_body_entered(body):
-	get_tree().change_scene_to_file("res://Scene/Main Menu/main_menu.tscn")
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://Scene/Main Menu/main_menu.tscn")
 
 func launch_arrow():
+	# Missing arrow management
 	var arrow_instance = arrow.instantiate()
-	var arrow_vector = Vector2()
-	arrow_instance.launch(arrow_vector, global_position)
-	get_tree().get_root().call_deferred("add_child",arrow_instance)
+	var mouse_position : Vector2 = (get_global_mouse_position() - global_position)
+	var launch_position = position + mouse_position * 0.1
+	arrow_instance.launch(mouse_position, launch_position)
+	get_tree().current_scene.add_child(arrow_instance)
 
