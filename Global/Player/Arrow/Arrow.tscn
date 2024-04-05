@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bst44t067b8pu"]
+
+[ext_resource type="Script" path="res://Global/Player/Arrow/Arrow.gd" id="1_wygmt"]
+[ext_resource type="Texture2D" uid="uid://cbun8gst7bvss" path="res://Assets/torch.png" id="2_kpow1"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_12h2l"]
+points = PackedVector2Array(-2, -2, 14, 0, -2, 2)
+
+[node name="Arrow" type="RigidBody2D"]
+script = ExtResource("1_wygmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+scale = Vector2(0.4, 3)
+shape = SubResource("ConvexPolygonShape2D_12h2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-28, -1.59872e-13)
+rotation = 1.5708
+scale = Vector2(0.2, 0.503333)
+texture = ExtResource("2_kpow1")

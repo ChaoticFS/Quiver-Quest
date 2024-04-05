@@ -15,3 +15,6 @@ shape = SubResource("CapsuleShape2D_logoa")
 position = Vector2(-1.78814e-06, -1)
 scale = Vector2(0.1875, 0.265625)
 texture = ExtResource("2_w8dji")
+
+[node name="Bow" type="Node2D" parent="."]
+position = Vector2(18, 0)
